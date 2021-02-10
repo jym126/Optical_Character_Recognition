@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         cameraSource = new CameraSource.Builder(getApplicationContext(), textRecognizer)
                 .setRequestedPreviewSize(1280, 1024)
+                .setFacing(CameraSource.CAMERA_FACING_BACK)
+                .setAutoFocusEnabled(true)
+                .setRequestedFps(2.0f)
                 .build();
 
         surfaceView = findViewById(R.id.surfaceView);
